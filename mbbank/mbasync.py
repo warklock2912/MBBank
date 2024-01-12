@@ -124,7 +124,7 @@ class MBBankAsync:
             'toDate': to_date.strftime("%d/%m/%Y"),  # max 3 months
         }
         data_out = await self._req(
-            "https://online.mbbank.com.vn/retail-web-transactionservice/transaction/getTransactionAccountHistory",
+            "https://online.mbbank.com.vn/api/retail-transactionms/transactionms/get-account-transaction-history",
             json=json_data)
         return data_out
 
