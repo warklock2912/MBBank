@@ -122,6 +122,9 @@ class MBBankAsync:
             'accountNo': self.__userid if accountNo is None else accountNo,
             'fromDate': from_date.strftime("%d/%m/%Y"),
             'toDate': to_date.strftime("%d/%m/%Y"),  # max 3 months
+            "deviceIdCommon": self.deviceIdCommon,
+            "refNo": self._userinfo["refNo"],
+            "sessionId": self.sessionId
         }
         data_out = await self._req(
             "https://online.mbbank.com.vn/api/retail-transactionms/transactionms/get-account-transaction-history",
